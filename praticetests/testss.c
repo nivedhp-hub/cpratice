@@ -88,25 +88,161 @@
 //     printf("Exited successfully\n");
 //     return 0;
 // }
+// #include<stdio.h>
+// void reversenumber(int n){
+//     int a[10];
+//     int i=0;
+//     while(n!=0){
+//         a[i]=n%10;
+//         n=n/10;
+//         i++;
+//     }
+//     for(int j=0;j<i;j++){
+//         printf("%d",a[j]);
+//     }
+// }
+// int main(){
+//     int n;
+//     while(1){
+//     printf("\nenter the number to reverse upto 10 digits :");
+//     scanf("%d",&n);
+//     reversenumber(n);
+// }
+// return 0;
+// }
+//check the number whether it is pallindrome or not using functions
+// #include<stdio.h>
+// int checkispallindrome(int n){
+//     int rev=0,checker;
+//     checker=n;
+//     if(n==0){
+//         return 1;
+//     }
+//     if (n<0){
+//         return 0;
+//     }
+//     while(n>0){
+
+//         int digit=n%10;
+//         rev=(rev*10+digit);
+//         n=n/10;
+//     }
+//     if(rev==checker){
+//         return 1;
+//     }
+//     else{
+//         return 0;
+//     }
+
+// }
+// int main(){
+//     int num,a;
+//     while(1){
+//     printf("enter the number that you want to check whether it is pallindrome :");
+//     scanf("%d",&num);
+//     a=checkispallindrome(num);
+//     if(a==1){
+//         printf("The number %d is pallindrome \n",num);}
+//     else{
+//         printf("The number %d is not  pallindrome \n",num);
+//     }
+// }
+//     return 0;
+// }
+//GCD of two numbers using functions
+// #include<stdio.h>
+// int checkgcd(int a,int b){
+//     int temp=0;
+//     if(a>0&&b==0){
+//         return a;
+//     }
+//     if(a==0&&b>0){
+//         return b;
+//     }
+//     if(a==0&&b==0){
+//         return 0;
+//     }
+//     if(a>0&&b>0){
+//         int c;
+//         if(a>b){
+//             c=b;
+//         }
+//         else{
+//             c=a;
+//         }
+//         for(int i=1;i<=c;i++){
+//             if(a%i==0&&b%i==0){
+//                 temp=i;
+//             }
+//         }
+//         return temp;
+//     }
+
+// }
+// int main(){
+//     int a,b,checker;
+//     while(1){
+//     printf("enter the numbers to check the greatest common factor :");
+//     scanf("%d %d",&a,&b);
+//     if(a<0||b<0){
+//         printf("Negatives enter valid \n");
+//         continue;
+//     }
+//     checker=checkgcd(a,b); 
+//     printf("The GCD of %d and %d  is %d\n",a,b,checker);
+// }
+//     return 0;
+// }
+//LCM of two numbers using functions
 #include<stdio.h>
-void reversenumber(int n){
-    int a[10];
-    int i=0;
-    while(n!=0){
-        a[i]=n%10;
-        n=n/10;
-        i++;
+
+int checkgcd(int a, int b){
+    int temp = 0;
+
+    if(a > 0 && b == 0) return a;
+    if(a == 0 && b > 0) return b;
+    if(a == 0 && b == 0) return 0;
+
+    int c = (a < b) ? a : b;
+
+    for(int i = 1; i <= c; i++){
+        if(a % i == 0 && b % i == 0){
+            temp = i;
+        }
     }
-    for(int j=0;j<i;j++){
-        printf("%d",a[j]);
-    }
+    return temp;
 }
+
+int checklcm(int a, int b){
+    if(a == 0 || b == 0)
+        return 0;
+
+    int gcd = checkgcd(a, b);
+    int lcm = (a * b) / gcd;
+
+    if(lcm < 0) lcm = -lcm;
+    return lcm;
+}
+
 int main(){
-    int n;
+    int a, b;
+
     while(1){
-    printf("\nenter the number to reverse upto 10 digits :");
-    scanf("%d",&n);
-    reversenumber(n);
+        printf("enter the numbers to check the greatest common factor and LCM: ");
+        scanf("%d %d", &a, &b);
+
+        if(a < 0 || b < 0){
+            printf("Negatives enter valid \n");
+            continue;
+        }
+
+        int gcd = checkgcd(a, b); 
+        printf("The GCD of %d and %d is %d\n", a, b, gcd);
+
+        int lcm = checklcm(a, b);
+        printf("The LCM of %d and %d is %d\n\n", a, b, lcm);
+    }
+
+    return 0;
 }
-return 0;
-}
+
