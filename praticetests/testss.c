@@ -194,55 +194,105 @@
 //     return 0;
 // }
 //LCM of two numbers using functions
+// #include<stdio.h>
+
+// int checkgcd(int a, int b){
+//     int temp = 0;
+
+//     if(a > 0 && b == 0) return a;
+//     if(a == 0 && b > 0) return b;
+//     if(a == 0 && b == 0) return 0;
+
+//     int c = (a < b) ? a : b;
+
+//     for(int i = 1; i <= c; i++){
+//         if(a % i == 0 && b % i == 0){
+//             temp = i;
+//         }
+//     }
+//     return temp;
+// }
+
+// int checklcm(int a, int b){
+//     if(a == 0 || b == 0)
+//         return 0;
+
+//     int gcd = checkgcd(a, b);
+//     int lcm = (a * b) / gcd;
+
+//     if(lcm < 0) lcm = -lcm;
+//     return lcm;
+// }
+
+// int main(){
+//     int a, b;
+
+//     while(1){
+//         printf("enter the numbers to check the greatest common factor and LCM: ");
+//         scanf("%d %d", &a, &b);
+
+//         if(a < 0 || b < 0){
+//             printf("Negatives enter valid \n");
+//             continue;
+//         }
+
+//         int gcd = checkgcd(a, b); 
+//         printf("The GCD of %d and %d is %d\n", a, b, gcd);
+
+//         int lcm = checklcm(a, b);
+//         printf("The LCM of %d and %d is %d\n\n", a, b, lcm);
+//     }
+
+//     return 0;
+// }
+//sum of digits of a number using functions
+// #include<stdio.h>
+// int getsumofdigits(int num){
+//     int sum=0;
+//     while(num>0){
+//     int remainder=num%10;
+//     sum=sum+remainder;
+//     num=num/10;
+// }
+// return sum;
+// }
+// int main(){
+//     int num,total;
+//     while(1){
+//     printf("enter the number that you want to find the sum of digits :");
+//     scanf("%d",&num);
+//     if(num<0){
+//         printf("Enter a valid positive number\n");
+//         continue;
+//     }
+//     total = getsumofdigits(num);
+//     printf("The sum of digits of %d is %d\n", num, total);
+// }
+//     return 0;
+// }
+//code two reverse an integer using functions
 #include<stdio.h>
-
-int checkgcd(int a, int b){
-    int temp = 0;
-
-    if(a > 0 && b == 0) return a;
-    if(a == 0 && b > 0) return b;
-    if(a == 0 && b == 0) return 0;
-
-    int c = (a < b) ? a : b;
-
-    for(int i = 1; i <= c; i++){
-        if(a % i == 0 && b % i == 0){
-            temp = i;
-        }
+int reversenumber(int num){
+    int revert=0;
+    while(num>0){
+        int digit=num%10;
+        revert=(revert*10)+digit;
+        num=num/10;
     }
-    return temp;
+    return revert;
 }
-
-int checklcm(int a, int b){
-    if(a == 0 || b == 0)
-        return 0;
-
-    int gcd = checkgcd(a, b);
-    int lcm = (a * b) / gcd;
-
-    if(lcm < 0) lcm = -lcm;
-    return lcm;
-}
-
 int main(){
-    int a, b;
-
+    int num,reverse,sign=1;
     while(1){
-        printf("enter the numbers to check the greatest common factor and LCM: ");
-        scanf("%d %d", &a, &b);
-
-        if(a < 0 || b < 0){
-            printf("Negatives enter valid \n");
-            continue;
-        }
-
-        int gcd = checkgcd(a, b); 
-        printf("The GCD of %d and %d is %d\n", a, b, gcd);
-
-        int lcm = checklcm(a, b);
-        printf("The LCM of %d and %d is %d\n\n", a, b, lcm);
+    printf("enter the number to reverse :");
+    scanf("%d",&num);
+    if(num<0){
+        num=-num;
+        sign=-1;
     }
-
+    reverse=reversenumber(num);
+    reverse=reverse*sign;
+    printf("The reverse of the number is %d\n",reverse);
+    }
     return 0;
 }
-
