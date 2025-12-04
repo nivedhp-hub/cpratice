@@ -343,6 +343,14 @@
 //     return fact;
     
 // }
+// long long checkrecursionfactorial(int num){
+//     if (num==0 || num==1){
+//         return 1;
+//     }
+//     else{
+//         return num*checkrecursionfactorial(num-1);
+//     }
+// }
 // int main(){
 //     int number;
 //     while(1){
@@ -354,6 +362,66 @@
 //     }
 //     long long factorial=checkfactorial(number);
 //     printf("The factorial of number %d is %lld\n",number,factorial);
+//     long long recfactorial=checkrecursionfactorial(number);
+//     printf("The factorial of number %d using recursion is %lld\n",number,recfactorial); 
 // }
 //     return 0;
 // }
+//printing patterns using functions
+// #include<stdio.h>   
+// void printfigure(int a,int b){
+//     for(int i=0;i<a;i++){
+//         for(int j=0;j<b;j++){
+//             printf("*\t");
+
+//         }
+//         printf("\n");
+//     }
+// }
+// int main(){
+//     int row,coloumn;
+//     printf("enter the dimensions you want to :");
+//     scanf("%d %d",&row,&coloumn);
+//     printfigure(row,coloumn);
+//     return 0;
+// }
+//printing right triangle
+// #include<stdio.h>   
+// void printfigure(int a){
+//     for(int i=0;i<a;i++){
+//         int count=i+1;
+//         while(count!=0){
+//             printf("*\t");
+//             count--;
+//         }
+//         printf("\n");
+
+//     }
+// }
+// int main(){
+//     int row;
+//     printf("enter the dimensions you want to :");
+//     scanf("%d",&row);
+//     printfigure(row);
+//     return 0;
+// }
+//inverted right triangle
+#include<stdio.h>   
+void printfigure(int a){
+    for(int i=a;i>0;i--){
+        int count=i;
+        while(count!=0){
+            printf("*\t");
+            count--;
+        }
+        printf("\n");
+
+    }
+}
+int main(){
+    int row;
+    printf("enter the dimensions you want to :");
+    scanf("%d",&row);
+    printfigure(row);
+    return 0;
+}
