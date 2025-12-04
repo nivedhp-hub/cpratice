@@ -406,22 +406,45 @@
 //     return 0;
 // }
 //inverted right triangle
-#include<stdio.h>   
-void printfigure(int a){
-    for(int i=a;i>0;i--){
-        int count=i;
-        while(count!=0){
-            printf("*\t");
-            count--;
-        }
-        printf("\n");
+// #include<stdio.h>   
+// void printfigure(int a){
+//     for(int i=a;i>0;i--){
+//         int count=i;
+//         while(count!=0){
+//             printf("*\t");
+//             count--;
+//         }
+//         printf("\n");
 
+//     }
+// }
+// int main(){
+//     int row;
+//     printf("enter the dimensions you want to :");
+//     scanf("%d",&row);
+//     printfigure(row);
+//     return 0;
+// }
+//printing pyramid pattern
+#include<stdio.h>
+void printpyramid(int row){
+    for(int i=0;i<row;i++){
+        int count=2*i+1;
+        int space=row-i;
+        for(int j=0;j<space;j++){
+            printf(" \t");
+        }
+        while(count!=0){
+        printf("*\t");
+        count--;
+    }
+    printf("\n");
     }
 }
 int main(){
-    int row;
-    printf("enter the dimensions you want to :");
-    scanf("%d",&row);
-    printfigure(row);
+    int rows;
+    printf("enter the rows for the pyramid:");
+    scanf("%d",&rows);
+    printpyramid(rows);
     return 0;
 }
