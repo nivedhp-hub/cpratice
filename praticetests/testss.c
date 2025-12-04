@@ -271,28 +271,89 @@
 //     return 0;
 // }
 //code two reverse an integer using functions
-#include<stdio.h>
-int reversenumber(int num){
-    int revert=0;
-    while(num>0){
-        int digit=num%10;
-        revert=(revert*10)+digit;
-        num=num/10;
-    }
-    return revert;
-}
-int main(){
-    int num,reverse,sign=1;
-    while(1){
-    printf("enter the number to reverse :");
-    scanf("%d",&num);
-    if(num<0){
-        num=-num;
-        sign=-1;
-    }
-    reverse=reversenumber(num);
-    reverse=reverse*sign;
-    printf("The reverse of the number is %d\n",reverse);
-    }
-    return 0;
-}
+// #include<stdio.h>
+// int reversenumber(int num){
+//     int revert=0;
+//     while(num>0){
+//         int digit=num%10;
+//         revert=(revert*10)+digit;
+//         num=num/10;
+//     }
+//     return revert;
+// }
+// int main(){
+//     int num,reverse,sign=1;
+//     while(1){
+//     printf("enter the number to reverse :");
+//     scanf("%d",&num);
+//     if(num<0){
+//         num=-num;
+//         sign=-1;
+//     }
+//     reverse=reversenumber(num);
+//     reverse=reverse*sign;
+//     printf("The reverse of the number is %d\n",reverse);
+//     }
+//     return 0;
+// }
+//code to find whether the number is an amstrong number or not using functions
+// #include<stdio.h>
+// #include<math.h>
+// int isarmstrong(int num){
+//     int sum=0,originalnum=num;
+//     while(num>0){
+//         int remainder=num%10;
+//         sum=sum+pow(remainder,3);
+//         num=num/10;
+//     }
+//     printf("%d\n",sum);
+//     if(originalnum==sum){
+//         return 1;
+//     }
+//     else{
+//         return 0;
+//     }
+// }
+// int main(){
+//     int number,condition;
+//     while(1){
+//     printf("enter the number that you want to check whether it is armstrong:");
+//     scanf("%d",&number);
+//     condition=isarmstrong(number);
+//     if(condition==1){
+//         printf("The number %d is Armstrong Number\n",number);
+//     }
+//     else{
+//         printf("The number %d is not an Armstrong number\n",number);
+//     }
+    
+// }
+// return 0;
+// }
+//program to find the factorial of a number using functions
+// #include<stdio.h>
+// long long checkfactorial(int num){
+//     long long fact=1;
+//     if(num==0){
+//         return fact;
+//     }
+//     for(int i=num;i>=1;i--){
+//          fact=fact*i;
+//     }
+//     return fact;
+    
+// }
+// int main(){
+//     int number;
+//     while(1){
+//     printf("enter the number that you want to find the factorial :");
+//     scanf("%d",&number);
+//     if(number<0){
+//         printf("invalid enter valid number\n");
+//         continue;
+//     }
+//     long long factorial=checkfactorial(number);
+//     printf("The factorial of number %d is %lld\n",number,factorial);
+// }
+//     return 0;
+// }
