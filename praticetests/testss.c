@@ -426,25 +426,322 @@
 //     return 0;
 // }
 //printing pyramid pattern
+// #include<stdio.h>
+// void printpyramid(int row){
+//     for(int i=0;i<row;i++){
+//         int count=2*i+1;
+//         int space=row-i-1;
+//         for(int j=0;j<space;j++){
+//             printf(" \t");
+//         }
+//         while(count!=0){
+//         printf("*\t");
+//         count--;
+//     }
+//     printf("\n");
+//     }
+// }
+// int main(){
+//     int rows;
+//     printf("enter the rows for the pyramid:");
+//     scanf("%d",&rows);
+//     printpyramid(rows);
+//     return 0;
+// }
+//inverted pyramid
+// #include<stdio.h>
+// void invertedpyramid(int row){
+//     int count;
+//     for(int i=0;i<row;i++){
+//         int s=i;
+//         while(s!=0){
+//             printf(" \t");
+//             s--;
+//         }
+//         count=(((row-i)*2)-1);
+//         while(count!=0){
+//             printf("*\t");
+//             count--;
+//         }
+//         printf("\n");
+//     }
+// }
+// int main(){
+//     int rows;
+//     printf("Enter the rows for inverted pyramid :");
+//     scanf("%d",&rows);
+//     invertedpyramid(rows);
+//     return 0;
+// }
+//floyd triangle
+// #include<stdio.h>
+// void floydtriangle(int n){
+//     int sum=0;
+//     for(int i=1;i<=n;i++){
+//         int s=i;
+//         while(s!=0){
+//             sum+=1;
+//         printf("%d\t",sum);
+//         s--;
+//     }
+//     printf("\n");
+// }
+// }
+// int main(){
+//     int rows;
+//     printf("Enter the rows for floyd triangle :");
+//     scanf("%d",&rows);
+//     floydtriangle(rows);
+//     return 0;
+// }
+//pascal triangle
+// #include <stdio.h>
+
+// // Function to compute nCr
+// int nCr(int n, int r) {
+//     long long res = 1;
+
+//     if (r > n - r)
+//         r = n - r;
+
+//     for (int i = 0; i < r; i++) {
+//         res = res * (n - i) / (i + 1);
+//     }
+
+//     return res;
+// }
+
+// // Function to print Pascal's Triangle
+// void printPascal(int rows) {
+//     for (int i = 0; i < rows; i++) {
+
+//         // Print spaces
+//         for (int s = 0; s < rows - i - 1; s++)
+//             printf("  ");
+
+//         // Print values
+//         for (int j = 0; j <= i; j++)
+//             printf("%d   ", nCr(i, j));
+
+//         printf("\n");
+//     }
+// }
+
+// int main() {
+//     int rows;
+
+//     printf("Enter number of rows: ");
+//     scanf("%d", &rows);
+
+//     printPascal(rows);
+
+//     return 0;
+// }
+//diamond pattern
+// #include <stdio.h>
+
+// void diamond(int n) {
+//     // Upper half
+//     for (int i = 0; i < n; i++) {
+//         for (int s = 0; s < n - i - 1; s++)
+//             printf(" ");
+//         for (int star = 0; star < 2 * i + 1; star++)
+//         {
+//             printf("*");
+//         }
+//         printf("\n");
+//     }
+
+//     // Lower half
+//     for (int i = n - 2; i >= 0; i--) {
+//         for (int s = 0; s < n - i - 1; s++)
+//             printf(" ");
+//         for (int star = 0; star < 2 * i + 1; star++)
+//             printf("*");
+//         printf("\n");
+//     }
+// }
+
+// int main() {
+//     int rows;
+//     printf("Enter number of rows: ");
+//     scanf("%d", &rows);
+
+//     diamond(rows);
+
+//     return 0;
+// }
+///fibonacci series using functions
+// #include<stdio.h>
+// void printfibo(int n){
+// //     int a[n];
+// //     for(int i=0;i<n;i++){
+// //         if(i==0){
+// //             a[i]=0;
+// //             printf("%d\t",a[i]);
+// //             continue;
+// //         }
+// //         if(i==1){
+// //             a[i]=1;
+// //             printf("%d\t",a[i]);
+// //             continue;
+// //         }
+// //         else{
+// //             a[i]=a[i-1]+a[i-2];
+// //             if(a[i]>n){
+// //                 break;
+// //             }
+// //             printf("%d\t",a[i]);
+// //         }
+// //     }
+// // }
+// int t1=0,t2=1,next;
+// printf("%d\t",t1);
+// if(n>t2){
+//     printf("%d\t",t2);
+// }
+// next=t1+t2;
+// while(next<n){
+//     printf("%d\t",next);
+//     t1=t2;
+//     t2=next;
+//     next=t1+t2;
+// }}
+// int main(){
+//     int number;
+//     printf("enter the number upto which u need the fibonnacii:");
+//     scanf("%d",&number);
+//     printfibo(number);
+//     return 0;
+// }
+//program to check the duplicate elements in an array using functions
+// #include<stdio.h>
+// void inputarray(int a[],int size){
+//     printf("enter the elements for the array:");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",&a[i]);
+//     }
+// }
+// void printarray(int a[],int size){
+//     printf("the elements in the array are :");
+//     for(int i=0;i<size;i++){
+//         printf("%d\t",a[i]);
+//     }
+// }
+// checkduplicate(int a[],int size){
+//     int flag=0;
+//     for(int i=0;i<size;i++){
+//         for(int j=i+1;j<size;j++){
+//             if(a[i]==a[j]){
+//                 printf("The duplicate element is %d\n",a[i]);
+//                 flag=1;
+//             }
+//         }
+//     }
+//     if(flag==0){
+//         printf("No duplicate elements found in the array\n");
+//     }
+// }
+// void removeduplicate(int a[],int *size){
+//     for(int i=0;i<*size;i++){
+//         for(int j=i+1;j<*size;j++){
+//             if(a[i]==a[j]){
+//                 for(int k=j;k<*size-1;k++){
+//                     a[k]=a[k+1];
+//                 }
+//                 (*size)--;
+//                 j--;
+//             }
+//         }
+//     }
+// }
+// int main(){
+//     int n;
+//     printf("enter the number of elements to be in the array:");
+//     scanf("%d",&n);
+//     int a[n];
+//     inputarray(a,n);
+//     printarray(a,n);
+//     checkduplicate(a,n);
+//     removeduplicate(a,&n);
+//     printf("The array after removing duplicates is :");
+//     printarray(a,n);
+//     return 0;
+
+// }
+//Array rotation
+// #include<stdio.h>
+// void inputarray(int a[],int size){
+//     printf("enter the elements for the array :");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",&a[i]);
+//     }
+// }
+// void printarray(int a[],int size){
+//      for(int i=0;i<size;i++){
+//         printf("%d\t",a[i]);
+//     }
+//     printf("\n");
+// }
+// void shiftarray(int a[],int shift,int size){
+//     int shiftcount=shift%size;
+//     while(shiftcount--){
+//         int temp=a[0];
+//         for(int i=0;i<size-1;i++){
+//             a[i]=a[i+1];
+//         }
+//         a[size-1]=temp;
+//     }
+// }
+
+// int main(){
+//     int size,shift;
+//     printf("enter the size of the array :");
+//     scanf("%d",&size);
+//     int a[size];
+//     inputarray(a,size);
+//     printarray(a,size);
+//     printf("enter the number of positions to be be shifted left in array :");
+//     scanf("%d",&shift);
+//     shiftarray(a,shift,size);
+//     printarray(a,size);
+//     return 0;
+// }
+//right rotate array
 #include<stdio.h>
-void printpyramid(int row){
-    for(int i=0;i<row;i++){
-        int count=2*i+1;
-        int space=row-i;
-        for(int j=0;j<space;j++){
-            printf(" \t");
-        }
-        while(count!=0){
-        printf("*\t");
-        count--;
-    }
-    printf("\n");
+void inputarray(int a[],int size){
+    printf("enter the elements for the array :");
+    for(int i=0;i<size;i++){
+        scanf("%d",&a[i]);
     }
 }
+void printarray(int a[],int size){
+     for(int i=0;i<size;i++){
+        printf("%d\t",a[i]);
+    }
+    printf("\n");
+}
+void shiftarrayright(int a[],int shift,int size){
+    int shiftcount=shift%size;
+    while(shiftcount--){
+        int temp=a[size-1];
+        for(int i=size-1;i>0;i--){
+            a[i]=a[i-1];
+        }
+        a[0]=temp;
+    }
+}
+
 int main(){
-    int rows;
-    printf("enter the rows for the pyramid:");
-    scanf("%d",&rows);
-    printpyramid(rows);
+    int size,shift;
+    printf("enter the size of the array :");
+    scanf("%d",&size);
+    int a[size];
+    inputarray(a,size);
+    printarray(a,size);
+    printf("enter the number of positions to be be shifted right in array :");
+    scanf("%d",&shift);
+    shiftarrayright(a,shift,size);
+    printarray(a,size);
     return 0;
 }
