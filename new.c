@@ -938,3 +938,30 @@
 //     return 0;
 // }
 //reversing an array only by using the pointers
+#include<stdio.h>
+void reverseArray(int *p, int size) {
+    int *start = p;
+    int *end = p + size - 1;
+
+    while (start < end) {
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+
+        start++;
+        end--;
+    }
+}
+int main(){
+    int n;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+
+    int a[n];
+    inputarray(a, n);
+
+    printf("Array: ");
+    printarray(a, n);
+    reversearray(a,n);
+
+}

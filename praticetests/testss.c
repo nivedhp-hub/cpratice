@@ -830,8 +830,116 @@
 //     return 0;
 // }
 //maximum and minum of an array only using pointers
+// #include<stdio.h>
+// void inputarray(int*p,int size){
+//     printf("enter the elements you want to store in array :");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",p+i);
+//     }
+// }
+// void printarray(int*p,int size){
+//     for(int i=0;i<size;i++){
+//         printf("%d\t",*(p+i));
+//     }
+// }
+// void maxofarray(int*p,int size){
+//     for(int i=0;i<size;i++){
+//         for(int j=i+1;j<size;j++){
+//             if(*(p+i)<*(p+j)){
+//                 int temp=*(p+i);
+//                 *(p+i)=*(p+j);
+//                 *(p+j)=temp;
+//             }
+//         }
+//     }
+//     printf("the sorted array is :\n");
+//     printarray(p,size);
+//     printf("\n");
+//     printf("The maximum element in the array is %d\n",*p);
+// }
+// void minofarray(int*p,int size){
+//     for(int i=0;i<size;i++){
+//         for(int j=i+1;j<size;j++){
+//             if(*(p+i)>*(p+j)){
+//                 int temp=*(p+i);
+//                 *(p+i)=*(p+j);
+//                 *(p+j)=temp;
+//             }
+//         }
+//     }
+//     printf("the sorted array is :\n");
+//     printarray(p,size);
+//     printf("\n");
+//     printf("The minimum element in the array is %d\n",*p);
+// }
+// int main(){
+//     int n;
+//     printf("enter the size of the array :");
+//     scanf("%d",&n);
+//     int a[n];
+//     int*p=a;
+//     inputarray(a,n);
+//     printarray(a,n);
+//     printf("\n");
+//     maxofarray(a,n);
+//     minofarray(a,n);
+//     return 0;
+// }
+// #include <stdio.h>
+
+// void inputarray(int *p, int size) {
+//     printf("Enter elements: ");
+//     for (int i = 0; i < size; i++) {
+//         scanf("%d", p + i);
+//     }
+// }
+
+// void printarray(int *p, int size) {
+//     for (int i = 0; i < size; i++) {
+//         printf("%d\t", *(p + i));
+//     }
+//     printf("\n");
+// }
+
+// int findMax(int *p, int size) {
+//     int max = *p;        // first element
+//     for (int i = 1; i < size; i++) {
+//         if (*(p + i) > max) {
+//             max = *(p + i);
+//         }
+//     }
+//     return max;
+// }
+
+// int findMin(int *p, int size) {
+//     int min = *p;
+//     for (int i = 1; i < size; i++) {
+//         if (*(p + i) < min) {
+//             min = *(p + i);
+//         }
+//     }
+//     return min;
+// }
+
+// int main() {
+//     int n;
+//     printf("Enter array size: ");
+//     scanf("%d", &n);
+
+//     int a[n];
+//     inputarray(a, n);
+
+//     printf("Array: ");
+//     printarray(a, n);
+
+//     printf("Max = %d\n", findMax(a, n));
+//     printf("Min = %d\n", findMin(a, n));
+
+//     return 0;
+// }
+//reversing an array only by using the pointers
 #include<stdio.h>
-void inputarray(int*p,int size){
+void inputarray(int*p,int size){        
     printf("enter the elements you want to store in array :");
     for(int i=0;i<size;i++){
         scanf("%d",p+i);
@@ -842,35 +950,16 @@ void printarray(int*p,int size){
         printf("%d\t",*(p+i));
     }
 }
-void maxofarray(int*p,int size){
-    for(int i=0;i<size;i++){
-        for(int j=i+1;j<size;j++){
-            if(*(p+i)<*(p+j)){
-                int temp=*(p+i);
-                *(p+i)=*(p+j);
-                *(p+j)=temp;
-            }
-        }
+void reversearray(int*p,int size){
+    int start=0;
+    int end=size-1;
+    while(start<end){
+        int temp=*(p+start);
+        *(p+start)=*(p+end);
+        *(p+end)=temp;
+        start++;
+        end--;
     }
-    printf("the sorted array is :\n");
-    printarray(p,size);
-    printf("\n");
-    printf("The maximum element in the array is %d\n",*p);
-}
-void minofarray(int*p,int size){
-    for(int i=0;i<size;i++){
-        for(int j=i+1;j<size;j++){
-            if(*(p+i)>*(p+j)){
-                int temp=*(p+i);
-                *(p+i)=*(p+j);
-                *(p+j)=temp;
-            }
-        }
-    }
-    printf("the sorted array is :\n");
-    printarray(p,size);
-    printf("\n");
-    printf("The minimum element in the array is %d\n",*p);
 }
 int main(){
     int n;
@@ -881,7 +970,10 @@ int main(){
     inputarray(a,n);
     printarray(a,n);
     printf("\n");
-    maxofarray(a,n);
-    minofarray(a,n);
+    reversearray(a,n);
+    printf("The reversed array is :\n");
+    printarray(a,n);
     return 0;
 }
+
+
