@@ -708,40 +708,180 @@
 //     return 0;
 // }
 //right rotate array
-#include<stdio.h>
-void inputarray(int a[],int size){
-    printf("enter the elements for the array :");
-    for(int i=0;i<size;i++){
-        scanf("%d",&a[i]);
-    }
-}
-void printarray(int a[],int size){
-     for(int i=0;i<size;i++){
-        printf("%d\t",a[i]);
-    }
-    printf("\n");
-}
-void shiftarrayright(int a[],int shift,int size){
-    int shiftcount=shift%size;
-    while(shiftcount--){
-        int temp=a[size-1];
-        for(int i=size-1;i>0;i--){
-            a[i]=a[i-1];
-        }
-        a[0]=temp;
-    }
-}
+// #include<stdio.h>
+// void inputarray(int a[],int size){
+//     printf("enter the elements for the array :");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",&a[i]);
+//     }
+// }
+// void printarray(int a[],int size){
+//      for(int i=0;i<size;i++){
+//         printf("%d\t",a[i]);
+//     }
+//     printf("\n");
+// }
+// void shiftarrayright(int a[],int shift,int size){
+//     int shiftcount=shift%size;
+//     while(shiftcount--){
+//         int temp=a[size-1];
+//         for(int i=size-1;i>0;i--){
+//             a[i]=a[i-1];
+//         }
+//         a[0]=temp;
+//     }
+// }
 
+// int main(){
+//     int size,shift;
+//     printf("enter the size of the array :");
+//     scanf("%d",&size);
+//     int a[size];
+//     inputarray(a,size);
+//     printarray(a,size);
+//     printf("enter the number of positions to be be shifted right in array :");
+//     scanf("%d",&shift);
+//     shiftarrayright(a,shift,size);
+//     printarray(a,size);
+//     return 0;
+// }
+//array operations using pointers
+// #include<stdio.h>
+// void inputarray(int*p,int size){
+//     printf("enter the elements to be stored in the array :");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",p+i);
+//     }
+// }
+// void printarray(int*p,int size){
+//     for(int i=0;i<size;i++){
+//         printf("%d\t",*(p+i));
+//     }
+//     printf("\n");
+// }
+// void printsum(int*p,int size){
+//     int sum=0;
+//     for(int i=0;i<size;i++){
+//         sum=sum+*(p+i);
+//     }
+//     printf("sum ofthe elements in array =%d",sum);
+//     printf("\n");
+// }
+// void findminimumofarray(int *p, int size) {
+//     for (int i = 0; i < size; i++) {
+//         for (int j = i + 1; j < size; j++) {
+//             if (*(p + i) > *(p + j)) {   // ascending!
+//                 int temp = *(p + i);
+//                 *(p + i) = *(p + j);
+//                 *(p + j) = temp;
+//             }
+//         }
+//     }
+
+//     printf("The smallest element in the array is %d\n", *p);
+// }
+// void findmaximumofarray(int *p, int size) {
+//     for (int i = 0; i < size; i++) {
+//         for (int j = i + 1; j < size; j++) {
+//             if (*(p + i) < *(p + j)) {   // descending!
+//                 int temp = *(p + i);
+//                 *(p + i) = *(p + j);
+//                 *(p + j) = temp;
+//             }
+//         }
+//     }
+
+//     printf("The largest element in the array is %d\n", *p);
+// }
+
+// int main(){
+//     int size;
+//     int*p;
+//     printf("enter the size of the array:");
+//     scanf("%d",&size);
+//     int a[size];
+//     p=a;
+//     inputarray(p,size);
+//     printarray(p,size);
+//     printsum(p,size);
+//     findminimumofarray(p,size);
+//     findmaximumofarray(p,size);
+//     printf("\n");
+//     return 0;
+// }
+//swapping 2 numbers using pointers
+// #include<stdio.h>
+// void swap(int*x,int*y){
+//     int temp;
+//     temp=*x;
+//     *x=*y;
+//     *y=temp;
+// }
+// int main(){
+//     int a,b;
+//     int*p,*q;
+//     p=&a;
+//     q=&b;
+//     printf("enter two numbers that you want to swap : ");
+//     scanf("%d %d",p,q);
+//     printf("the numbers are a=%d and b=%d\n",*p,*q);
+//     swap(p,q);
+//     printf("the numbers are a=%d and b=%d\n",*p,*q);
+//     return 0;
+// }
+//maximum and minum of an array only using pointers
+#include<stdio.h>
+void inputarray(int*p,int size){
+    printf("enter the elements you want to store in array :");
+    for(int i=0;i<size;i++){
+        scanf("%d",p+i);
+    }
+}
+void printarray(int*p,int size){
+    for(int i=0;i<size;i++){
+        printf("%d\t",*(p+i));
+    }
+}
+void maxofarray(int*p,int size){
+    for(int i=0;i<size;i++){
+        for(int j=i+1;j<size;j++){
+            if(*(p+i)<*(p+j)){
+                int temp=*(p+i);
+                *(p+i)=*(p+j);
+                *(p+j)=temp;
+            }
+        }
+    }
+    printf("the sorted array is :\n");
+    printarray(p,size);
+    printf("\n");
+    printf("The maximum element in the array is %d\n",*p);
+}
+void minofarray(int*p,int size){
+    for(int i=0;i<size;i++){
+        for(int j=i+1;j<size;j++){
+            if(*(p+i)>*(p+j)){
+                int temp=*(p+i);
+                *(p+i)=*(p+j);
+                *(p+j)=temp;
+            }
+        }
+    }
+    printf("the sorted array is :\n");
+    printarray(p,size);
+    printf("\n");
+    printf("The minimum element in the array is %d\n",*p);
+}
 int main(){
-    int size,shift;
+    int n;
     printf("enter the size of the array :");
-    scanf("%d",&size);
-    int a[size];
-    inputarray(a,size);
-    printarray(a,size);
-    printf("enter the number of positions to be be shifted right in array :");
-    scanf("%d",&shift);
-    shiftarrayright(a,shift,size);
-    printarray(a,size);
+    scanf("%d",&n);
+    int a[n];
+    int*p=a;
+    inputarray(a,n);
+    printarray(a,n);
+    printf("\n");
+    maxofarray(a,n);
+    minofarray(a,n);
     return 0;
 }
