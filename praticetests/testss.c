@@ -938,8 +938,115 @@
 //     return 0;
 // }
 //reversing an array only by using the pointers
+// #include<stdio.h>
+// void inputarray(int*p,int size){        
+//     printf("enter the elements you want to store in array :");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",p+i);
+//     }
+// }
+// void printarray(int*p,int size){
+//     for(int i=0;i<size;i++){
+//         printf("%d\t",*(p+i));
+//     }
+// }
+// void reversearray(int*p,int size){
+//     int start=0;
+//     int end=size-1;
+//     while(start<end){
+//         int temp=*(p+start);
+//         *(p+start)=*(p+end);
+//         *(p+end)=temp;
+//         start++;
+//         end--;
+//     }
+// }
+// int main(){
+//     int n;
+//     printf("enter the size of the array :");
+//     scanf("%d",&n);
+//     int a[n];
+//     int*p=a;
+//     inputarray(a,n);
+//     printarray(a,n);
+//     printf("\n");
+//     reversearray(a,n);
+//     printf("The reversed array is :\n");
+//     printarray(a,n);
+//     return 0;
+// }
+//find the second largest number in an array 
+// #include<stdio.h>
+// #include<limits.h>
+// void inputarray(int*p,int size){
+//     printf("enter the elements for the array :");
+//     for(int i=0;i<size;i++){
+//         scanf("%d",p+i);
+//     }
+// }
+// void printarray(int*p,int size){
+//      for(int i=0;i<size;i++){
+//         printf("%d\t",*(p+i));
+//     }
+// }
+// void findsecondlargest(int *p, int size) {
+//     int max1 = INT_MIN;
+//     int max2 = INT_MIN;
+
+//     for (int i = 0; i < size; i++) {
+//         int x = *(p + i);
+
+//         if (x > max1) {
+//             max2 = max1;   // save old largest
+//             max1 = x;      // update largest
+//         }
+//         else if (x < max1 && x > max2) {
+//             max2 = x;
+//         }
+//     }
+
+//     printf("Second largest = %d\n", max2);
+//     printf("The largest element in the array is %d\n", max1);
+//     printf("\n");   
+// }
+// void findsecondsmallest(int *p, int size) {
+//     int min1 = INT_MAX;
+//     int min2 = INT_MAX;
+
+//     for (int i = 0; i < size; i++) {
+//         int x = *(p + i);
+
+//         if (x < min1) {
+//             min2 = min1;   // save old smallest
+//             min1 = x;      // update smallest
+//         }
+//         else if (x > min1 && x < min2) {
+//             min2 = x;
+//         }
+//     }
+
+//     printf("Second smallest = %d\n", min2);
+//     printf("The smallest element in the array is %d\n", min1);
+//     printf("\n");
+// }
+
+// int main(){
+//     int n;
+//     printf("enter the size of the array :");
+//     scanf("%d",&n);
+//     int a[n];
+//    int*p=a;
+//    inputarray(p,n);
+//     printarray(p,n);
+//     printf("\n");
+//     findsecondlargest(p,n);
+//     findsecondsmallest(p,n);
+//     return 0;
+
+// }
+//code to remove duplicates from an array using pointers
 #include<stdio.h>
-void inputarray(int*p,int size){        
+void inputarray(int*p,int size){
     printf("enter the elements you want to store in array :");
     for(int i=0;i<size;i++){
         scanf("%d",p+i);
@@ -950,17 +1057,23 @@ void printarray(int*p,int size){
         printf("%d\t",*(p+i));
     }
 }
-void reversearray(int*p,int size){
-    int start=0;
-    int end=size-1;
-    while(start<end){
-        int temp=*(p+start);
-        *(p+start)=*(p+end);
-        *(p+end)=temp;
-        start++;
-        end--;
+void removeduplicate(int *p, int *size) {
+   for(int i=0;i<*size;i++){
+    for(int j=i+1;j<*size;j++){
+        if(*(p+i)==*(p+j)){
+            for(int k=j;k<*size-1;k++){
+                *(p+k)=*(p+k+1);
+            }
+            (*size)--;
+            j--;
+
+
+        }
     }
-}
+        }
+    }
+   
+
 int main(){
     int n;
     printf("enter the size of the array :");
@@ -970,10 +1083,6 @@ int main(){
     inputarray(a,n);
     printarray(a,n);
     printf("\n");
-    reversearray(a,n);
-    printf("The reversed array is :\n");
-    printarray(a,n);
+    removeduplicate(a,&n);
     return 0;
 }
-
-
